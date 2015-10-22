@@ -21,7 +21,7 @@ func main() {
 		//hello/:name1
 		fmt.Fprintf(rw, "Hello, %s!\n", p.ByName("name"))
 	})
-	ap.POST("/", func(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	ap.POST("/hello", func(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		x := Request{}
 		json.NewDecoder(r.Body).Decode(&x)
 		x_marshal, _ := json.Marshal(x)
